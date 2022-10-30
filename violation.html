@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>potato</title>
+    <link rel="icon" href="logo.png"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
+
+    <style>
+        html{
+            overflow: hidden;
+
+        }
+        .CON1{
+            background-color: #2D2B2C;
+        }
+
+        .ROW1{
+            background-color: #DCDCDC;
+        }
+        
+        .COL1{
+            margin-left: -4px;
+            margin-right: 4px;
+            background-color: #A19B9E;
+        }
+
+        .COL2{
+            margin-right: -4px;
+            margin-left: 4px;
+            background-color: #DCDCDC;
+        }
+
+        .sidebarLink{
+            text-decoration: none;
+            border-bottom: 2px solid #707070;
+            font: bold 13px segoe UI;
+            color: white;
+        }
+        .sidebarLink:hover{
+            background-color: #707070;
+            color: white;
+        }
+
+        .violationTable th{
+            border: 1px solid #707070;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            
+        }
+        .violationTable td{
+            border: 1px solid #707070;
+        }
+        .violationTable {
+            max-height: 300px;
+            text-align: center;
+            border-collapse: collapse;
+            width: 940px;
+            background-color: #F7F7F7;
+            display: block;
+            overflow-y: scroll;
+            white-space: nowrap;
+            font-size: 13px;
+        }
+
+        .search{
+            background-color: white;
+            width: 97%;
+            border-radius: 7px;
+            
+        }
+
+        .search p{
+            margin: 0%;
+            color: #747172;
+            opacity: 52%;
+        }
+
+        .search img{
+            height: 20px;
+            width: 20px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <div class="container-fluid CON1 py-4 px-5">
+        <div class="row p-0">
+        <div class="col-12 p-0">
+            <div class='container-fluid' style='background: #A19B9E; border-color: #707070;'>
+            <div class='row'>
+            <div class='col-2 py-2'>
+                <h8>Welcome:<span style="color: rgb(249, 183, 0);"> Junaid Atif</span></h8>
+            </div>
+            <div class='col-7'>
+                
+            </div>
+            <div class='col-2 py-2 ps-4'>
+                <h8>Signed In as:<span style="color: rgb(249, 183, 0);"> Admin</span></h8>
+            </div>
+            <div class='col-1 p-0 py-1'>
+                <div class="btn btn-dark">Log Out</div>
+            </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="row ROW1 py-3 px-3">
+            <div class="col-2 COL1 py-0" style='border: 1px solid #707070; border-radius: 5px; height: 79vh;'>
+                <ui class="" style='list-style-type: none'}}>
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>Registration</a>   
+                </li>
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>Attendance</a> 
+                </li>
+                <li class='row'>
+                    <a href="violation.html" class='col-12 p-1 sidebarLink'>Violations</a> 
+                </li>
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>Role Management</a> 
+                </li> 
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>Group Management</a>   
+                </li>
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>System Control</a>   
+                </li>
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>Rules & Policy Editor</a>   
+                </li>
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>Live Stream</a>  
+                </li>
+                <li class='row'>
+                    <a href="home.html" class='col-12 p-1 sidebarLink'>Performance Monitoring</a>   
+                </li>             
+                </ui>
+            </div>
+
+            <div class="col-10 COL2 p-0">
+                    <div class='col-12' style='background: #A19B9E; border: 1px solid #707070; border-radius: 5px; height: 79vh;'>
+                        <div class="row p-0 m-0">
+                            <h1 style='color: white; padding-left: 12px; margin: 0; font-size: 29px; text-decoration: underline;'>Violations</h1>
+                        </div>
+                        <div class="row ms-2 my-2 p-1 search">
+                            <div class="col-1 p-0">
+                                <img src="searchIcon.webp" alt="">
+                            </div>
+                            <div class="col-11 p-0">
+                                <p>Search Users by Employee ID, CNIC, or Mobile Number</p>
+                            </div>
+                         </div>
+                        <div class='container col-12 px-2'>                   
+                            <table class='violationTable'>
+                            <tr>
+                                <th>Employee Id</th>
+                                <th>Employee Name</th>
+                                <th>CNIC</th>
+                                <th>User Type/Role</th>
+                                <th>Zone</th>
+                                <th>Critical Violations</th>
+                                <th>Low-Level Violations</th>
+                                <th>Operations</th>                    
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td>John Doe</td>
+                                <td>35202-1111111-1</td>
+                                <td>Super User</td>
+                                <td>A</td>
+                                <td style="color: red;">5</td>
+                                <td>6</td>
+                                <td>
+                                    <a href="#violation.html"><img src="visIcon.png" alt="visibilityIcon"></a>
+                                </td>
+                            </tr>
+
+                                
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>  
+
+</body>
+</html>
